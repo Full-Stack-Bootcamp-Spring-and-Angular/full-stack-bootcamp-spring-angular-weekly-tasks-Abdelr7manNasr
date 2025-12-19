@@ -4,13 +4,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        double x = input.nextDouble();
+        double length = input.nextDouble();
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Shape c = (Circle) context.getBean("circle", x);
-        Shape s = (Square) context.getBean("square", x);
+        Shape circle = (Circle) context.getBean("circle", length);
+        Shape square = (Square) context.getBean("square", length);
 
-        System.out.println("the area of the circle = " + c.getArea());
-        System.out.println("the area of the Square = " + s.getArea());
+        System.out.println(String.format("The area of the circle = %.2f", circle.getArea()));
+        System.out.println(String.format("The area of the square = %.2f", square.getArea()));
+
     }
 }
