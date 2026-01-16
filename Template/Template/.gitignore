@@ -1,29 +1,57 @@
-### IntelliJ IDEA ###
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+*.iws
+*.ipr
+
+############################
+# Build / Output
+############################
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+target/
+build/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+############################
+# Tomcat / SmartTomcat
+############################
+smarttomcat/
+tomcat/
+logs/
+work/
+temp/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+############################
+# Libraries (External JARs)
+############################
+libs/
 
-### VS Code ###
-.vscode/
+############################
+# Maven / Gradle
+############################
+.mvn/
+.gradle/
 
-### Mac OS ###
+############################
+# OS Files
+############################
 .DS_Store
+Thumbs.db
+
+############################
+# Compiled Java
+############################
+*.class
+
+############################
+# Environment / Config
+############################
+*.env
+db.properties
+application.properties
+
+############################
+# Logs
+############################
+*.log
