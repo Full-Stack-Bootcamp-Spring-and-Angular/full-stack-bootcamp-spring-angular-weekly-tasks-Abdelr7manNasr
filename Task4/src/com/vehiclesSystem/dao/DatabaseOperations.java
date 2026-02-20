@@ -29,7 +29,6 @@ public class DatabaseOperations {
     public void connectToDatabase() {
         try {
             connection = DriverManager.getConnection(url, username, password);
-            System.out.println("connection has been established......");
         } catch (Exception e) {
             e.printStackTrace();
         }
