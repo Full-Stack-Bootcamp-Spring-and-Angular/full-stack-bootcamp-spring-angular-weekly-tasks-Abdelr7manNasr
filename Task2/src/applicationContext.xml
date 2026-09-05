@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="draw2dBean"
+          class="com.injection.Draw2d"/>
+
+    <bean id="circle"
+          class="com.injection.Circle">
+        <constructor-arg ref="draw2dBean"/>
+    </bean>
+
+    <bean id="square"
+          class="com.injection.Square">
+        <property name="draw2d" ref="draw2dBean"/>
+    </bean>
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="mydatabaseOperation" class="com.vehicles.DatabaseOperation">
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <bean id="car" class="com.vehicles.Car">
+        <constructor-arg ref="mydatabaseOperation" />
+    </bean>
+
+    <bean id="plane" class="com.vehicles.Plane">
+        <property name="databaseOperation" ref="mydatabaseOperation"/>
+    </bean>
+</beans>

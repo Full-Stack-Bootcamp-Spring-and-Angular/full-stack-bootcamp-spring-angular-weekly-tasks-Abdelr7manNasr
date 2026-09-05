@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="draw2dBean"
+          class="com.injection.Draw2d"/>
+
+    <bean id="draw3dBean"
+          class="com.injection.Draw3d"/>
+
+    <bean id="circle"
+          class="com.injection.Circle" scope="singleton">
+        <constructor-arg ref="draw2dBean"/>
+    </bean>
+
+    <bean id="square"
+          class="com.injection.Square" scope="prototype" >
+        <property name="draw3d" ref="draw3dBean"/>
+    </bean>
+
+    <bean id="init-destroy" class="com.injection.DatabaseOperations" init-method="connectToDatabase" destroy-method="disconnectFromDatabase">
+    </bean>
+</beans>
