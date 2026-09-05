@@ -1,0 +1,66 @@
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+out/
+
+# ===== SmartTomcat =====
+.smarttomcat/
+
+# ===== Compiled files =====
+target/
+*.class
+
+# ===== Logs =====
+*.log
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Environment =====
+.env
+
+# ===== Libraries (if auto-generated) =====
+/libs/*.jar
+
+# ===== Node (if any frontend tools later) =====
+node_modules/
+dist/
+
+# ===== Temporary files =====
+*.tmp
+*.bak
+*.swp
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+out/
+
+# ===== SmartTomcat =====
+.smarttomcat/
+
+# ===== Compiled files =====
+target/
+*.class
+
+# ===== Logs =====
+*.log
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Environment =====
+.env
+
+# ===== Libraries (if auto-generated) =====
+/libs/*.jar
+
+# ===== Node (if any frontend tools later) =====
+node_modules/
+dist/
+
+# ===== Temporary files =====
+*.tmp
+*.bak
+*.swp

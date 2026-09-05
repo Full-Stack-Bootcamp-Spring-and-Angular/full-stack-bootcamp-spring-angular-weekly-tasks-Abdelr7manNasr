@@ -1,0 +1,46 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <property name="connection.url">
+            jdbc:mysql://localhost:3306/userdb?useSSL=false&amp;serverTimezone=UTC
+        </property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- Echo SQL to console -->
+        <property name="show_sql">true</property>
+
+        <!-- Format SQL -->
+        <property name="format_sql">false</property>
+
+        <!-- Dialect (مناسب لـ Hibernate 5.2) -->
+        <property name="dialect">
+            org.hibernate.dialect.MySQL57Dialect
+        </property>
+
+        <!-- Built-in Connection Pool -->
+        <property name="connection.pool_size">4</property>
+
+        <!-- Current Session Context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Auto create / update tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Optional performance settings -->
+        <property name="hibernate.jdbc.batch_size">20</property>
+        <property name="hibernate.order_inserts">true</property>
+        <property name="hibernate.order_updates">true</property>
+
+    </session-factory>
+</hibernate-configuration>
